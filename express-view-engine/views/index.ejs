@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="content-body">
+    <h1>Hello <%= nama %></h1>
+
+    <h2>Daftar Mahasiswa</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <% if (mahasiswa.length <= 0) { %>
+      <tbody>
+        <tr>
+          <td colspan="2">Data mahasiswa masih kosong</td>
+        </tr>
+      </tbody>
+      <%} else { %>
+      <tbody>
+        <% mahasiswa.forEach(mhs => { %>
+        <tr>
+          <td><%= mhs.nama %></td>
+          <td><%= mhs.email %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+      <% } %>
+    </table>
+  </div>
+</div>
